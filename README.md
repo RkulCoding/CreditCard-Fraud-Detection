@@ -1,108 +1,112 @@
-# CreditCard-Fraud-Detection
-This project is an end-to-end Machine Learning + Data Visualization Dashboard for detecting fraudulent credit card transactions. It includes data preprocessing, EDA (Exploratory Data Analysis), ML model training, evaluation, and simple visualization.
+"variant":"document",
+"id":"48319",
+"title":"README Template for Credit Card Fraud Detection"
+}
 
-#prject structure
+# Credit Card Fraud Detection (Machine Learning Project)
+
+### 🎯 Objective
+
+This project is an end-to-end Machine Learning + Data Visualization Dashboard for detecting fraudulent credit card transactions. It includes data preprocessing, EDA (Exploratory Data Analysis), ML model training, evaluation, and simple visualizations.
+
+---
+
+## 📌 Dataset
+
+* Source: Kaggle
+* Total transactions: 284,807
+* Fraud transactions: Highly imbalanced dataset
+* Features: Time, Amount, V1–V28 (PCA components)
+
+---
+
+## 🛠️ Tools & Technologies
+
+* **Python**
+* **Pandas**, **NumPy**
+* **Matplotlib**, **Seaborn**
+* **Scikit-learn**
+* **Jupyter Notebook**
+
+---
+
+## 📂 Project Structure
+
+```
 CreditCard-Fraud-Detection/
-│
-├── Data/
-│   └── creditcard.csv              # Dataset (not uploaded to GitHub because it is >100 MB)
-│
-├── Notebooks/
-│   ├── fraud_detection_eda_model.ipynb
-│   ├── ML_Models.ipynb
-│   └── prediction_Visualization.ipynb
-│
-├── Visuals/
-│   └── Graphs.ipynb
-│
-└── README.md
+│── data/
+│── notebooks/
+│── scripts/
+│── visuals/
+│── README.md
+```
 
-Project Description
+---
 
-The goal of this project is to identify fraudulent credit card transactions using machine learning models.
+## 🧹 Step 1: Data Preprocessing
 
-You perform:
+* Handle imbalance using undersampling
+* Scale "Amount" and "Time"
+* Remove missing values
+* Prepare train/test split
 
-✅ Data Cleaning and Preprocessing
+---
 
-Handling class imbalance
+## 📊 Step 2: Exploratory Data Analysis
 
-Scaling numerical features
+* Fraud vs Legit distribution
+* Correlation Heatmap
+* Amount distribution
+* Time-based transaction patterns
 
-Splitting dataset into train/test
+### 🔥 Sample Visual
 
-✅ Exploratory Data Analysis
+![Fraud vs Legit](visuals/fraud_vs_legit.png)
 
-Fraud vs Non-Fraud distribution
+---
 
-Amount pattern analysis
+## 🤖 Step 3: Model Training
 
-Correlation heatmaps
+Tried multiple models:
 
-Visual graphs
+* Logistic Regression
+* Decision Tree
+* Random Forest (Best)
 
-✅ Machine Learning Models
+### Best Model: **Random Forest**
 
-You trained and evaluated:
+* Accuracy: ~96%
+* Precision: High for fraud class
+* Handles imbalance well
 
-Logistic Regression
+---
 
-Random Forest Classifier
+## 📈 Step 4: Evaluation
 
-XGBoost (optional)
+* Confusion Matrix
+* Classification Report
+* ROC Curve
 
-✅ Evaluation Metrics
+---
 
-Accuracy
+## 🧠 Key Insights
 
-Precision
+* Fraud transactions have lower amount values
+* Certain PCA components correlate strongly with fraud
+* Imbalanced dataset → need careful resampling
 
-Recall
+---
 
-F1 Score
+## 🚀 How to Run the Project
 
-Confusion Matrix
-
-📊 Results
-
-Fraud detection is an imbalanced problem, so metrics like Recall and F1-Score matter the most.
-The Random Forest model usually performs best on such datasets.
-
-(You can replace this section later with exact numbers from your notebook.)
-
-🚀 How to Run
-1️⃣ Install Dependencies
+```
 pip install -r requirements.txt
+cd scripts
+python train_model.py
+```
 
-2️⃣ Open the Notebooks
+---
 
-Run using VS Code or Jupyter:
+## 📬 Contact
 
-Notebooks/ML_Models.ipynb
-Notebooks/fraud_detection_eda_model.ipynb
-Notebooks/prediction_Visualization.ipynb
-
-⚠️ Important Note
-
-The dataset (creditcard.csv) is NOT uploaded to GitHub because it is 143 MB and GitHub has a 100 MB limit.
-
-You can download the dataset from:
-🔗 https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
-
-Data/creditcard.csv
-
-📌 Future Improvements
-
-Add Streamlit dashboard
-
-Model retraining pipeline
-
-API endpoint using FastAPI
-
-Deploy on AWS/GCP
-
-👤 Author
-
-Rashmi Kulkarni
-MCA Student | Data Analyst & ML Learner
-
+Feel free to connect for collaboration or improvements.
